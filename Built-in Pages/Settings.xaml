@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="EmptyBrowser.Built_in_Pages.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EmptyBrowser.Built_in_Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <NavigationView x:Name="SettingsNavView"
+                    PaneDisplayMode="LeftCompact"
+                    Header="设置"
+                    SelectionChanged="SettingsNavView_SelectionChanged"
+                    IsBackButtonVisible="Collapsed"
+                    IsSettingsVisible="False">
+
+        <NavigationView.MenuItems>
+            <NavigationViewItem Icon="Setting" Content="常规" Tag="General"/>
+            <NavigationViewItem Icon="Permissions" Content="隐私" Tag="Privacy"/>
+            <NavigationViewItem Icon="Download" Content="下载" Tag="Download"/>
+            <NavigationViewItem Icon="Web" Content="搜索引擎" Tag="SearchEngine"/>
+        </NavigationView.MenuItems>
+
+        <ScrollViewer>
+            <Frame x:Name="SettingsFrame" NavigationFailed="SettingsFrame_NavigationFailed"/>
+        </ScrollViewer>
+    </NavigationView>
+</Page>
